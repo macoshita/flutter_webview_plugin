@@ -20,6 +20,7 @@ import android.provider.MediaStore;
 import androidx.core.content.FileProvider;
 import android.database.Cursor;
 import android.provider.OpenableColumns;
+import android.graphics.Color;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -398,6 +399,8 @@ class WebviewManager {
         if(!scrollBar){
             webView.setVerticalScrollBarEnabled(false);
         }
+
+        webView.setBackgroundColor(Color.TRANSPARENT);
 
         if (headers != null) {
             webView.loadUrl(url, headers);
