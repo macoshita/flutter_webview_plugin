@@ -108,6 +108,9 @@ static NSString *const CHANNEL_NAME = @"flutter_webview_plugin";
     }
 
     self.webview = [[WKWebView alloc] initWithFrame:rc];
+    if (@available(iOS 9.0, *) && userAgent != (id)[NSNull null]) {
+        self.webView.customUserAgent = userAgent;
+    }
     self.webview.UIDelegate = self;
     self.webview.navigationDelegate = self;
     self.webview.scrollView.delegate = self;
